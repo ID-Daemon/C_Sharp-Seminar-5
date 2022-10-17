@@ -56,65 +56,55 @@
 
 // resultArray(array2);
 
-int[] GetArray(int size, int minValue, int maxValue){
-    int[] res = new int[size];
-
-    for (int i = 0; i < size; i++)
-    {
-        res[i] = new Random().Next(minValue, maxValue + 1);
-    }
-    return res;
-}
-
-void resultArray(int[] collection ) {
-    for (int i = 0, j = collection.Length-1; i < collection.Length / 2; i++, j--)
-    {
-        Console.Write(collection[i]*collection[j] + ", ");
-    }
-    if (collection.Length % 2 != 0)  Console.WriteLine(collection[collection.Length/2]);
-}
+// void resultArray(int[] collection ) {
+//     for (int i = 0, j = collection.Length-1; i < collection.Length / 2; i++, j--)
+//     {
+//         Console.Write(collection[i]*collection[j] + ", ");
+//     }
+//     if (collection.Length % 2 != 0)  Console.WriteLine(collection[collection.Length/2]);
+// }
 
 
-void ViewArray (int[] collection, String separator, int size = 0, int countOnLine = 0, int lengthNumber = -1){
-    Boolean flag = true;
-    Boolean isNeedFormat = lengthNumber > 0;
-    int temp = countOnLine;
-    if (size == 0) size = collection.Length;
-    for (int i = 0; i < size; i++)
-    {
-        flag = true;
-        if (isNeedFormat){
-            for (int j = 0; j < lengthNumber - collection[i].ToString().Length; j++)
-            {
-                Console.Write(" ");
-            }
-        }
-        Console.Write(collection[i]);
-        if ((countOnLine > 0) && (i == countOnLine - 1)){
-            Console.WriteLine();
-            countOnLine+=temp;
-            flag = false;
-        } 
-        if (flag) Console.Write(separator);
-    }
-    if (flag) Console.WriteLine();
-}
-int[] MirrorValueInArray(int[] collection){
-    for (int i = 0; i < collection.Length; i++) collection[i] -= collection[i] * 2;
-    return collection;
-}
+// void ViewArray (int[] collection, String separator, int size = 0, int countOnLine = 0, int lengthNumber = -1){
+//     Boolean flag = true;
+//     Boolean isNeedFormat = lengthNumber > 0;
+//     int temp = countOnLine;
+//     if (size == 0) size = collection.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         flag = true;
+//         if (isNeedFormat){
+//             for (int j = 0; j < lengthNumber - collection[i].ToString().Length; j++)
+//             {
+//                 Console.Write(" ");
+//             }
+//         }
+//         Console.Write(collection[i]);
+//         if ((countOnLine > 0) && (i == countOnLine - 1)){
+//             Console.WriteLine();
+//             countOnLine+=temp;
+//             flag = false;
+//         } 
+//         if (flag) Console.Write(separator);
+//     }
+//     if (flag) Console.WriteLine();
+// }
+// int[] MirrorValueInArray(int[] collection){
+//     for (int i = 0; i < collection.Length; i++) collection[i] -= collection[i] * 2;
+//     return collection;
+// }
 
-Boolean FindNumberInArray(int[] collection, int findNumber){
-    Boolean flag = false;
-    foreach (int item in collection)
-    {
-        if (item == findNumber) {
-            flag = true;
-            break;
-        }
-    }
-    return flag;
-}
+// Boolean FindNumberInArray(int[] collection, int findNumber){
+//     Boolean flag = false;
+//     foreach (int item in collection)
+//     {
+//         if (item == findNumber) {
+//             flag = true;
+//             break;
+//         }
+//     }
+//     return flag;
+// }
 
 
 // ----------------------------------------------------------------------------------------------------------------
@@ -178,4 +168,16 @@ int DifferenceMinMax(int[] collection){
         if (max < item) max = item;
     }
     return max - min;
+}
+
+// ----------------------------------------------
+
+int[] GetArray(int size, int minValue, int maxValue){
+    int[] res = new int[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        res[i] = new Random().Next(minValue, maxValue + 1);
+    }
+    return res;
 }
